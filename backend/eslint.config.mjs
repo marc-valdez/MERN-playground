@@ -8,11 +8,8 @@ export default defineConfig([
     plugins: { js },
     extends: ['js/recommended'],
     languageOptions: {
-      sourceType: 'commonjs',
-      ecmaVersion: 2023,
       globals: {
         ...globals.node,
-        ...globals.commonjs,
       },
     },
     rules: {
@@ -31,7 +28,7 @@ export default defineConfig([
       indent: ['error', 2],
       'linebreak-style': ['error', 'windows'],
       quotes: ['error', 'single', { avoidEscape: true }],
-      semi: ['error', true],
+      semi: ['error', 'always'],
       'max-len': ['error', { code: 200 }],
       'comma-dangle': ['error', 'always-multiline'],
       'object-curly-spacing': ['error', 'always'],
@@ -60,5 +57,5 @@ export default defineConfig([
       'no-path-concat': 'error',
       'no-sync': ['error', { allowAtRootLevel: true }],
     },
-  }
+  },
 ]);
