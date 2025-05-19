@@ -13,6 +13,10 @@
             "directory": "backend",
             "changeProcessCWD": true
         },
+        {
+            "directory": "frontend",
+            "changeProcessCWD": true
+        }
     ],
     "eslint.enable": true
 }
