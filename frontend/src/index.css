@@ -56,7 +56,7 @@ header a {
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+.workout-details button {
   position: absolute;
   top: 20px;
   right: 20px;
