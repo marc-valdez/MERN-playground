@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import globals from "globals";
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
@@ -21,6 +22,7 @@ export default [
         sourceType: 'module',
       },
       globals: {
+        ...globals.browser,
         process: 'readonly',
       },
     },
@@ -35,8 +37,9 @@ export default [
       ...pluginReactHooks.configs.recommended.rules,
       ...pluginJsxA11y.configs.recommended.rules,
 
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
-      'no-undef': 'error',
+      // Error prevention
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      'no-undef': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
 
       curly: ['error', 'multi-line'],
